@@ -18,7 +18,7 @@ body {
 
 .container {
     position: relative;
-    max-width: 350px;
+    max-width: 500px;
     width: 100%;
     background: #fff;
     border-radius: 12px;
@@ -35,7 +35,7 @@ header {
 
 textarea {
     width: 100%;
-    height: 180px;
+    height: 240px;
     border-radius: 8px;
     margin: 20px 0;
     padding: 10px 15px;

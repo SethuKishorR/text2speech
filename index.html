@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - codingnepalweb.com -->
 <html lang="en">
 
 <head>
@@ -8,13 +7,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Text2Speech Converter</title>
     <link rel="stylesheet" href="index.css" />
+    <style>
+        select:focus {
+            border: 1px solid lightgrey;
+            outline: none;
+        }
+
+        .spinner {
+            border: 4px solid transparent;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+            display: none;
+            /* Hidden by default */
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .loadingButton {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
         <header>Text to Speech Converter</header>
         <textarea placeholder="Enter text"></textarea>
-        <button>Convert to Speech</button>
+        <select id="voiceSelect"
+            style="width: 100%; padding: 8px; margin: 0px 0px 15px 0px; border-radius: 4px; border: 1px solid #ccc; font-size: 16px;"></select>
+        <div style="display: flex; justify-content: space-between; width: 100%;">
+            <button style="width: 60%;" id="convertButton" class="loadingButton">
+                <span class="spinner" id="loadingSpinner"></span> Convert to Speech
+            </button>
+            <button style="width: 38%;" id="stopButton">Stop</button>
+        </div>
     </div>
 
     <script src="index.js" defer></script>
